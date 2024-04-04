@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMouvements : MonoBehaviour
 {
     public CharacterController controller;
-    public Transform cam;
+    //public Transform cam;
 
     float moveSpeed = 10f;
     public float playerScore = 0f;
@@ -31,12 +31,12 @@ public class PlayerMouvements : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg * cam.eulerAngles.y;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
 
-            Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            //Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             //Move the object to XYZ coordinates defined as horizontalInput, 0, and verticalInput respectively.
-            controller.Move(moveDirection.normalized * moveSpeed * Time.deltaTime);
+            controller.Move(direction.normalized * moveSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.Space))

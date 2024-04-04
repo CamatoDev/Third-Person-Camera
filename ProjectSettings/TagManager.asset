@@ -6,6 +6,10 @@ TagManager:
   tags:
   - coinGold
   - coinSilver
+  - BigCoinGold
+  - Pick
+  - Key
+  - DoorClose
   layers:
   - Default
   - TransparentFX
