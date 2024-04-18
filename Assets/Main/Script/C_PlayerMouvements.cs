@@ -26,7 +26,7 @@ public class PlayerMouvement : MonoBehaviour
         float verticalInput = Input.GetAxis("Horizontal");
         //Get the value of the Vertical input axis.
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.AddForce(Vector3.up * 4);
